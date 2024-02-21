@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -53,4 +54,14 @@ dependencies {
     // Navigation
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    // Koin
+    implementation("io.insert-koin:koin-core:3.2.0")
+    implementation("io.insert-koin:koin-android:3.2.0")
+
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    implementation("com.google.firebase:firebase-core:21.1.1")
+    implementation("com.firebaseui:firebase-ui-auth:8.0.0")
+    implementation("com.firebaseui:firebase-ui-database:8.0.0")
 }

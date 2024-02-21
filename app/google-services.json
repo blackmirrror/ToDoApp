@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "584947804136",
+    "project_id": "todoapp-f6136",
+    "storage_bucket": "todoapp-f6136.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584947804136:android:6f6d2cab99e1a001e8e65d",
+        "android_client_info": {
+          "package_name": "ru.blackmirrror.todoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI9hYN55io86wzm-Cpd1q5GUNLwL4LrR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

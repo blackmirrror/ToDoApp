@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authFragment"
-        android:name="ru.blackmirrror.todoapp.auth.AuthFragment"
+        android:name="ru.blackmirrror.todoapp.presentation.auth.AuthFragment"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth" >
         <action
@@ -19,22 +19,37 @@
     </fragment>
     <fragment
         android:id="@+id/todoItemsFragment"
-        android:name="ru.blackmirrror.todoapp.todoItems.TodoItemsFragment"
+        android:name="ru.blackmirrror.todoapp.presentation.todoItems.TodoItemsFragment"
         android:label="fragment_todo_items"
         tools:layout="@layout/fragment_todo_items" >
         <action
             android:id="@+id/action_todoItemsFragment_to_editFragment"
             app:destination="@id/editFragment" />
         <action
-            android:id="@+id/action_todoItemsFragment_to_authFragment"
-            app:destination="@id/authFragment"
+            android:id="@+id/action_todoItemsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
             app:launchSingleTop="true"
             app:popUpTo="@+id/nav_graph"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/editFragment"
-        android:name="ru.blackmirrror.todoapp.edit.EditFragment"
+        android:name="ru.blackmirrror.todoapp.presentation.edit.EditFragment"
         android:label="fragment_edit"
         tools:layout="@layout/fragment_edit" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ru.blackmirrror.todoapp.presentation.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_todoItemsFragment"
+            app:destination="@id/todoItemsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_loginFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
 </navigation>

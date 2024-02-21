@@ -1,7 +1,8 @@
-package ru.blackmirrror.todoapp
+package ru.blackmirrror.todoapp.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import ru.blackmirrror.todoapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

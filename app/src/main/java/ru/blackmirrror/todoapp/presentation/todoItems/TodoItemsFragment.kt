@@ -1,18 +1,19 @@
-package ru.blackmirrror.todoapp.todoItems
+package ru.blackmirrror.todoapp.presentation.todoItems
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.blackmirrror.todoapp.R
 import ru.blackmirrror.todoapp.databinding.FragmentTodoItemsBinding
 
 class TodoItemsFragment : Fragment() {
 
     private lateinit var binding: FragmentTodoItemsBinding
+    private val viewModel by viewModel<TodoItemsViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,16 +26,22 @@ class TodoItemsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setButtons()
+        observe()
     }
 
     private fun setButtons() {
         binding.floatingButton.setOnClickListener {
-            val action = TodoItemsFragmentDirections.actionTodoItemsFragmentToEditFragment()
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.action_todoItemsFragment_to_editFragment)
         }
         binding.btnLogout.setOnClickListener {
-            val action = TodoItemsFragmentDirections.actionTodoItemsFragmentToAuthFragment()
-            findNavController().navigate(action)
+            viewModel.logout()
+        }
+    }
+
+    private fun observe() {
+        viewModel.userEmail.observe(viewLifecycleOwner) {
+            if (it == null)
+                findNavController().navigate(R.id.action_todoItemsFragment_to_loginFragment)
         }
     }
 }
