@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <CheckBox
+        android:id="@+id/item_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@drawable/custom_checkbox_selector"
+        app:useMaterialThemeColors="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    
+    <LinearLayout
+        android:id="@+id/linear_todo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_importance"
+        app:layout_constraintEnd_toStartOf="@id/item_info_btn">
+
+        <TextView
+            android:id="@+id/item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:text="@string/task"
+            android:textSize="@dimen/text_size_body"
+            android:lineHeight="@dimen/text_line_height_body"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:gravity="start"/>
+
+        <TextView
+            android:id="@+id/item_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="?attr/colorSecondary"
+            android:textSize="@dimen/text_size_subhead"
+            android:lineHeight="@dimen/text_line_height_subhead"
+            android:gravity="start"
+            tools:text="@string/task_date"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_importance"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toEndOf="@id/item_done"
+        app:layout_constraintEnd_toStartOf="@id/linear_todo"
+        app:layout_constraintTop_toTopOf="@id/linear_todo" />
+
+    <ImageButton
+        android:id="@+id/item_info_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:foregroundGravity="top"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

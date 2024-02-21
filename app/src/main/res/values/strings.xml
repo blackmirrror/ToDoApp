@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ToDoApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="task">Задача</string>
+    <string name="task_date">дата</string>
+
+    <string name="btn_save">СОХРАНИТЬ</string>
+    <string name="btn_delete">УДАЛИТЬ</string>
+
+    <string name="description">Что надо сделать?</string>
+    <string name="importance">Важность</string>
+    <string name="edit_importance">Нет</string>
+    <string name="edit_switch_deadline">Сделать до</string>
+    <string name="count_done_tasks">Выполнено - 0</string>
+    <string name="title_todo_items">Мои дела</string>
+    <string name="enter">Вход или регистрация</string>
+    <string name="btn_logout">Выйти</string>
 </resources>
