@@ -9,6 +9,6 @@ interface AuthRepository {
         password: String,
         result: (UiState<String>) -> Unit
     )
-    fun getCurrentUserEmail(): String?
+    fun getCurrentUserUid(): String?
     fun logoutUser()
 }

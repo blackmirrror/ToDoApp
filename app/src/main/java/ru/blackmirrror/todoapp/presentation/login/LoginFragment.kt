@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.blackmirrror.todoapp.R
+import ru.blackmirrror.todoapp.data.utils.TextFormatter
 import ru.blackmirrror.todoapp.data.utils.UiState
 import ru.blackmirrror.todoapp.databinding.FragmentLoginBinding
 import ru.blackmirrror.todoapp.presentation.auth.AuthViewModel
@@ -35,10 +36,7 @@ class LoginFragment : Fragment() {
 
     private fun setButtons() {
         binding.btnLoginNext.setOnClickListener {
-            viewModel.login(
-                binding.etLoginEmail.text.toString(),
-                binding.etLoginPassword.text.toString()
-            )
+            toLogin()
         }
 
         binding.tvLoginAuth.setOnClickListener {
@@ -57,6 +55,19 @@ class LoginFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun toLogin() {
+        if (TextFormatter.isValidEmail(binding.etLoginEmail.text.toString())) {
+            if (TextFormatter.isValidPassword(binding.etLoginPassword.text.toString())) {
+                viewModel.login(
+                    binding.etLoginEmail.text.toString(),
+                    binding.etLoginPassword.text.toString()
+                )
+            }
+            else toast("Пароль должен содержать не менее 6 символов")
+        }
+        else toast("Проверьте корректность введенного email")
     }
 
     private fun toast(message: String) {

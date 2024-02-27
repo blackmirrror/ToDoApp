@@ -88,6 +88,7 @@
         android:paddingHorizontal="8dp"
         android:paddingBottom="12dp"
         android:scrollbarStyle="outsideOverlay"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         tools:itemCount="4"
         tools:listitem="@layout/item_todo" />

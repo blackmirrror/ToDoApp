@@ -23,4 +23,7 @@
 
     <string name="hint_email">Email</string>
     <string name="hint_password">Пароль</string>
+    <string name="menu_importance_none">Нет</string>
+    <string name="menu_importance_low">Низкий</string>
+    <string name="menu_importance_high">!!Высокий</string>
 </resources>

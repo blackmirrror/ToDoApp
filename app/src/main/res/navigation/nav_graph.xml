@@ -36,7 +36,13 @@
         android:id="@+id/editFragment"
         android:name="ru.blackmirrror.todoapp.presentation.edit.EditFragment"
         android:label="fragment_edit"
-        tools:layout="@layout/fragment_edit" />
+        tools:layout="@layout/fragment_edit" >
+        <argument
+            android:name="task_id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue=""/>
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="ru.blackmirrror.todoapp.presentation.login.LoginFragment"

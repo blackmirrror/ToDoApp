@@ -58,9 +58,9 @@ class AuthRepositoryImpl(
             }
     }
 
-    override fun getCurrentUserEmail(): String? {
+    override fun getCurrentUserUid(): String? {
         val user = auth.currentUser
-        return user?.email
+        return user?.uid
     }
 
     override fun logoutUser() {
