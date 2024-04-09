@@ -2,6 +2,10 @@ package ru.blackmirrror.todoapp.data
 
 import java.util.Date
 
+/**
+ * @brief класс с моделями данных
+ */
+
 data class Task(
     var id: String = "",
     var text: String,

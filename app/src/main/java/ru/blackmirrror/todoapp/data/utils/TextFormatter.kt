@@ -4,6 +4,10 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+/**
+ * @brief утилита для форматирования текста
+ */
+
 object TextFormatter {
 
     fun isValidEmail(email: String): Boolean {

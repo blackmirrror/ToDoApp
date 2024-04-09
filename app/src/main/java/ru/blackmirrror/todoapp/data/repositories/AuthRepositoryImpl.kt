@@ -6,6 +6,10 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import ru.blackmirrror.todoapp.data.utils.UiState
 
+/**
+ * @brief реализация репозитория пользователя
+ */
+
 class AuthRepositoryImpl(
     private val auth: FirebaseAuth
 ): AuthRepository {
